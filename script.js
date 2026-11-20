@@ -33,3 +33,23 @@ const userObject = JSON.parse(retrievedUser);
 console.log(userObject.name);
 console.log(userObject.age);
 console.log(userObject.city);
+
+// Task 4
+
+const tasks = [
+  { id: 1, title: "Learn JavaScript", completed: false },
+  { id: 2, title: "Practice React", completed: false },
+];
+
+localStorage.setItem("tasks", JSON.stringify(tasks));
+
+const retrievedTasks = JSON.parse(localStorage.getItem("tasks"));
+
+retrievedTasks[0].completed = true;
+
+localStorage.setItem("tasks", JSON.stringify(retrievedTasks));
+
+const finalTasks = JSON.parse(localStorage.getItem("tasks"));
+
+console.log(finalTasks[0]);
+console.log(finalTasks[1]);
